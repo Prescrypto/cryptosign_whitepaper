@@ -1,5 +1,113 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
+%--------------------------------------------------------
+
+%--------------Preamble-------------------
+\documentclass[letterpaper, 12pt]{article}
+
+%% Language and font encodings
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[letterpaper,top=3cm,bottom=3.5cm,left=2.8cm,right=2.8cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath} % Algorithms
+\usepackage{cprotect} % To use \verb as {argument}
+\usepackage{indentfirst} % Verbose
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage[procnames]{listings}
+\usepackage{natbib}
+\usepackage{url}
+\usepackage{pdfpages} % For multpage pdf
+\usepackage[linesnumbered,ruled]{algorithm2e}
+\usepackage{algpseudocode}
+
+%% MACROS
+% Define keywords macro command
+\providecommand{\keywords}[1]{\textbf{\textit{Keywords---}} #1}
+
+\lstset{language=Python,
+        basicstyle=\ttfamily\small,
+        keywordstyle=\color{blue},
+        commentstyle=\color{blue},
+        stringstyle=\color{red},
+        showstringspaces=false,
+        identifierstyle=\color{purple},
+        procnamekeys={def,class}}
+
+%--------------/Preamble-------------------
+
+
+%--------------Content-------------------
+\title{Cryptosign\\
+Firma de contratos electrónicos\\
+}
+%\author{}
+
 \begin{document}
-(Type your content here.)
+\maketitle
+
+\begin{abstract}
+Cryptosign es un servicio de gestión de documentos electrónicos altamente flexible. Tiene funciones de cifrado, almacenado, sellado, firmado y auditoría. Es compatible con diversos estándares y se puede utilizar con firmas autógrafas capturadas por medios electrónicos, certificados digitales (SSL, FIEL, etc) y contraseñas simples. Este documento explica las herramientas de firmado y auditoría y los beneficios comerciales.
+\end{abstract}
+
+% Insert keywords here
+\setlength\parindent{.45in} \keywords{Blockchain}
+
+\clearpage
+
+\tableofcontents
+\listoffigures
+% \listoftables % Uncomment if necessary
+
+%--------------Glossary-------------------
+% \newpage % Uncomment if you want glossary on same page
+% {\Large \textbf{Glossary of terms and names}}
+\section*{Glosario}
+\begin{enumerate}
+    \item 
+\end{enumerate}
+
+%--------------/Glossary-------------------
+
+\clearpage
+
+% \subsection{How to add Comments}
+% {\Large If you're contributing, label the document {\bf before} and {\bf after} your contribution (on top menu, {\bf ``History \& Revisions'' > type name and click ``Add Label''}) to help us keep track of all contributions.}\\
+
+% Comments can be added to your project by clicking on the comment icon in the toolbar above. % * <john.hammersley@gmail.com> 2016-07-03T09:54:16.211Z:
+% %
+% % Here's an example comment!
+% %
+% To reply to a comment, simply click the reply button in the lower right corner of the comment, and you can close them when you're done.
+
+% Comments can also be added to the margins of the compiled PDF using the todo command\todo{Name: Here's a comment in the margin!}, as shown in the example on the right. You can also add inline comments:\\ {\bf Please add your name so we can keep track of who's commenting.}
+
+% \todo[inline, color=red!40]{Name: This is an inline comment.}
+
+
+
+
+\section{Introducción}
+Esto es una introducción
+\subsection{Estado del Arte}
+Esto es una subsección
+\subsubsection{Sub}
+Esto es otra subsección
+\section{Legal}
+\subsection{Framework}
+
+	
+
+\clearpage
+
+\bibliographystyle{plainnat}
+\bibliography{biblio}
+
+
 \end{document}
+%--------------/Content-------------------

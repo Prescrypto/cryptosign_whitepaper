@@ -46,17 +46,17 @@
 \title{Cryptosign\\
 Firma de contratos electrónicos\\
 }
-%\author{}
+\author{Bernardo Meza-Torres, Everardo J. Barojas-Mendez}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-Cryptosign es un servicio de gestión de documentos electrónicos altamente flexible. Tiene funciones de cifrado, almacenado, sellado, firmado y auditoría. Es compatible con diversos estándares y se puede utilizar con firmas autógrafas capturadas por medios electrónicos, certificados digitales (SSL, FIEL, etc) y contraseñas simples. Este documento explica las herramientas de firmado y auditoría y los beneficios comerciales.
+Cryptosign es un servicio de gestión de documentos electrónicos altamente flexible. Tiene funciones de cifrado, almacenado, sellado, firmado y auditoría. Es compatible con diversos estándares y se puede utilizar con firmas autógrafas capturadas por medios electrónicos, certificados digitales (SSL, FIEL, etc) y contraseñas simples. Este documento explica las herramientas de firmado y auditoría y los beneficios comerciales \cite{Civic}.
 \end{abstract}
 
 % Insert keywords here
-\setlength\parindent{.45in} \keywords{Blockchain}
+\setlength\parindent{.45in} \keywords{Blockchain, firma electrónica, documento electrónico, equivalencia funcional}
 
 \clearpage
 
@@ -94,12 +94,31 @@ Cryptosign es un servicio de gestión de documentos electrónicos altamente flex
 
 \section{Introducción}
 Esto es una introducción
-\subsection{Estado del Arte}
-Esto es una subsección
+\subsection{Sustento Legal}
+En diversos países existen actualmente marcos legales reconociendo ampliamente a la firma electrónica. En el año 2000 se promulgó el Electronic SIgnature in Global and National Commerce (ESIGN) Act, haciendo que sea una firma válida para todos los usos. En la Unión Europea se promulgó en 2016 el Electronic Identification and Trust Services Regulation (eIDAS), el cual tiene una envergadura similar que el ESIGN. 
+
+En México las leyes permiten que las partes expresen su consentimiento a través de medios electrónicos. Se han realizado reformas a diversas leyes, como el Código Comercial, el Código Civil Federal y el Código Federal en Procedimientos Civiles, que validan el uso de firmas electrónicas tanto simples como avanzadas. Se prefiere en México el uso de la firma avanzada, aunque la ley da la laxitud de poder implementar diferentes firmas en distintos acuerdos (jurisdicción de dos vías).
+
+
+Signature types: authenticate, sign, time-stamp, track events, validate with authorities, comply with regulations
+
 \subsubsection{Sub}
 Esto es otra subsección
-\section{Legal}
-\subsection{Framework}
+\section{Proceso de Firmado}
+El primer paso para firmar documentos electrónicos consiste en aplicar una “función resumen” al documento que se desea enviar.
+
+Esta función convierte un archivo electrónico de cualquier tamaño en pequeño texto cifrado (que recibe el nombre de "resumen" o "hash"), a los resúmenes se les conoce como las "huellas digitales" de los archivos electrónicos y la probabilidad de tener dos resúmenes iguales para dos documentos distintos es casi nula. Cryptosign estampa esta huella digital en cada hoja del documento para proteger su integridad y tener una referencia visual rápida de que no se modificó el documento.
+
+Una vez obtenido el resumen del documento, éste es cifrado utilizando diversos métodos:
+\begin{enumerate}
+\item En caso de utilizar la cadena de caracteres de una contraseña, se hace una firma ciega en el origen del documento por cada uno de los firmantes. El proceso de firmado ciego no expone la clave a terceros malignos.
+\item En caso de utilizar una firma autógrafa capturada por medios electrónicos, se firma ciegamente con el "hash" de la imagen que contenga los rasgos de firma.
+\item En caso de utilizar FIEL, se cifra con la llave privada del emisor del mensaje (archivo electrónico con extensión KEY).
+\end{enumerate}
+
+En todos los casos, el resultado es lo que se denomina ``firma electrónica'': una cadena de caracteres que se anexa al mensaje original.  
+
+\subsection{}
 
 	
 
